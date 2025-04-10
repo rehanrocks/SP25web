@@ -1,0 +1,65 @@
+ body {
+     font-family: 'Poppins', sans-serif;
+ }
+
+ .bg-brown {
+     background-color: #4B2E1E;
+ }
+
+ .bg-dark-brown {
+     background-color: #5b331d;
+ }
+
+ .bg-darker-brown {
+     background-color: #452818;
+ }
+
+ .hero-section {
+     background: url('https://adsleatherbelts.pk/cdn/shop/files/mens-fashion-close-up-of-shirt-and-belt.jpg?v=1714703420&width=1200') no-repeat center center/cover;
+     height: 80vh;
+     display: flex;
+     align-items: flex-end;
+     justify-content: center;
+     padding-bottom: 20px;
+ }
+
+ .product-img-container {
+     position: relative;
+ }
+
+ .discount-badge {
+     position: absolute;
+     top: 10px;
+     left: 10px;
+     z-index: 1;
+ }
+
+ .whatsapp-container {
+     position: fixed;
+     bottom: 10%;
+     right: 20px;
+     z-index: 1000;
+ }
+
+ .whatsapp-icon {
+     width: 50px;
+     height: 50px;
+     background-color: #25D366;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .whatsapp-icon img {
+     width: 28px;
+ }
+
+ .nav-link {
+     font-weight: 300;
+     font-size: 14px;
+ }
+
+ .stars {
+     color: #000;
+ }
+

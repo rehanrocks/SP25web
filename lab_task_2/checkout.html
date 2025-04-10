@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ADS Leather Belts</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container py-4 py-md-5 checkout-container">
+        <!-- Header with Logo -->
+        <header class="mb-4">
+            <div class="text-center mb-4">
+                <a href="index.html" class="text-decoration-none">
+                    <img src="https://adsleatherbelts.pk/cdn/shop/files/128-80_230x.webp?v=1720090245"
+                        alt="ADS Leather Belts" height="50">
+                </a>
+            </div>
+
+            <!-- Checkout Steps -->
+            <div class="checkout-steps">
+                <div class="step-progress" style="width: 0%;"></div>
+
+                <div class="step active">
+                    <span>1</span>
+                    <div class="step-label">Personal Info</div>
+                </div>
+
+                <div class="step">
+                    <span>2</span>
+                    <div class="step-label">Address</div>
+                </div>
+
+                <div class="step">
+                    <span>3</span>
+                    <div class="step-label">Payment</div>
+                </div>
+
+                <div class="step">
+                    <span>4</span>
+                    <div class="step-label">Complete</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Checkout Form -->
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Checkout Information</h5>
+                <div class="small text-muted">
+                    Go to home page <a href="index.html" class="text-decoration-none">Home</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <form id="checkoutForm" class="needs-validation" novalidate autocomplete="on">
+                    <!-- Personal Information -->
+                    <h5 class="mb-3">Personal Information</h5>
+
+                    <!-- Full Name -->
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" name="fullName" required
+                            pattern="^[A-Za-z ]+$" autocomplete="name">
+                        <div class="invalid-feedback" id="fullNameError">
+                            Please enter a valid name (only alphabets allowed).
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required autocomplete="email">
+                        <div class="invalid-feedback" id="emailError">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required pattern="^[0-9]{10,15}$"
+                            autocomplete="tel">
+                        <div class="invalid-feedback" id="phoneError">
+                            Please enter a valid phone number (10-15 digits).
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Shipping Address -->
+                    <h5 class="mb-3">Shipping Address</h5>
+
+                    <!-- Address -->
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" required
+                            autocomplete="street-address">
+                        <div class="invalid-feedback" id="addressError">
+                            Please enter your address.
+                        </div>
+                    </div>
+
+                    <!-- City, State, Zip -->
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" name="city" required
+                                autocomplete="address-level2">
+                            <div class="invalid-feedback">
+                                Please enter your city.
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="state" class="form-label">State/Province</label>
+                            <select class="form-select" id="state" name="state" required autocomplete="address-level1">
+                                <option value="">Select...</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Sindh">Sindh</option>
+                                <option value="KPK">Khyber Pakhtunkhwa</option>
+                                <option value="Balochistan">Balochistan</option>
+                                <option value="Islamabad">Islamabad</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select your state/province.
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="zip" class="form-label">Postal Code</label>
+                            <input type="text" class="form-control" id="zip" name="zip" required
+                                autocomplete="postal-code">
+                            <div class="invalid-feedback">
+                                Please enter your postal code.
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Payment Information -->
+                    <h5 class="mb-3">Payment Information</h5>
+
+                    <!-- Credit Card Example -->
+                    <div class="alert alert-info mb-3">
+                        <small>
+                            <i class="bi bi-info-circle me-2"></i>
+                            For testing, you can use this example card: <strong>4111 1111 1111 1111</strong>, Exp:
+                            <strong>12/2025</strong>, CVV: <strong>123</strong>
+                            <button type="button" id="autofillBtn" class="btn btn-sm btn-outline-primary ms-2">Autofill
+                                Example Card</button>
+                        </small>
+                    </div>
+
+                    <!-- Credit Card Number -->
+                    <div class="mb-3">
+                        <label for="cardNumber" class="form-label">Credit Card Number</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="cardNumber" name="cardNumber" required
+                                maxlength="19" placeholder="XXXX XXXX XXXX XXXX" autocomplete="cc-number">
+                            <span class="input-group-text">
+                                <i class="bi bi-credit-card"></i>
+                            </span>
+                        </div>
+                        <div class="invalid-feedback" id="cardNumberError">
+                            Please enter a valid 16-digit credit card number.
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Cardholder Name -->
+                        <div class="col-md-6 mb-3">
+                            <label for="cardholderName" class="form-label">Cardholder Name</label>
+                            <input type="text" class="form-control" id="cardholderName" name="cardholderName" required
+                                autocomplete="cc-name">
+                            <div class="invalid-feedback">
+                                Please enter the cardholder name.
+                            </div>
+                        </div>
+
+                        <!-- Expiry Date and CVV -->
+                        <div class="col-md-3 mb-3">
+                            <label for="expiryDate" class="form-label">Expiry Date</label>
+                            <input type="text" class="form-control" id="expiryDate" name="expiryDate" required
+                                placeholder="MM/YYYY" maxlength="7" autocomplete="cc-exp">
+                            <div class="invalid-feedback" id="expiryDateError">
+                                Please enter a valid future expiry date.
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label for="cvv" class="form-label">CVV</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="cvv" name="cvv" required
+                                    pattern="^[0-9]{3}$" maxlength="3" autocomplete="cc-csc">
+                                <span class="input-group-text" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="3-digit security code on the back of your card">
+                                    <i class="bi bi-question-circle"></i>
+                                </span>
+                            </div>
+                            <div class="invalid-feedback" id="cvvError">
+                                Please enter a valid 3-digit CVV.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Notice -->
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-shield-lock text-success me-2 fs-5"></i>
+                        <small class="text-muted">Your payment information is processed securely. We do not store credit
+                            card details.</small>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Complete Purchase</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body text-center p-5">
+                        <div class="mb-4">
+                            <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+                        </div>
+                        <h4 class="mb-4">Thank You for Your Order!</h4>
+                        <p class="mb-4">Your order has been placed successfully. A confirmation email has been sent to
+                            your email address.</p>
+                        <p class="mb-4">Order #: <strong>ADS-2025-7890</strong></p>
+                        <div class="d-grid">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continue
+                                Shopping</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
