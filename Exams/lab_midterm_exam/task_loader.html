@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Task Loader</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-container">
+            <h1 class="mb-3">📄 Dynamic Task Loader</h1>
+            <p class="text-muted">Click any task below to view its content in the iframe. This simulates dynamic content
+                loading like a single-page app (SPA).</p>
+        </div>
+
+        <!-- Task List Row -->
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="task-item">
+                    <h5>Assignment 1: CV using HTML & CSS</h5>
+                    <button class="btn-view"
+                        onclick="loadTask('../../Assignments/assignment_1/index.html')">View</button>
+                </div>
+
+                <div class="task-item">
+                    <h5>Assignment 2: E-Commerce Landing Page</h5>
+                    <button class="btn-view"
+                        onclick="loadTask('../../Assignments/assignment_2/index.html')">View</button>
+                </div>
+
+                <div class="task-item">
+                    <h5>Lab Task 1: Landing Page using Bootstrap</h5>
+                    <button class="btn-view" onclick="loadTask('../../Lab_Tasks/lab_task_1/index.html')">View</button>
+                </div>
+
+                <div class="task-item">
+                    <h5>Lab Task 2: Checkout Page with Validation</h5>
+                    <button class="btn-view" onclick="loadTask('../../Lab_Tasks/lab_task_2/index.html')">View</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- iframe Row (Below Task List) -->
+        <div class="row">
+            <div class="col-12">
+                <div class="iframe-container">
+                    <!-- View Controls -->
+                    <div class="view-controls">
+                        <button class="btn btn-primary" id="mobile-view" onclick="changeView('mobile')">Mobile
+                            View</button>
+                        <button class="btn btn-primary" id="tablet-view" onclick="changeView('tablet')">Tablet
+                            View</button>
+                        <button class="btn btn-primary btn-active" id="desktop-view"
+                            onclick="changeView('desktop')">Desktop View</button>
+                    </div>
+
+                    <div id="iframe-wrapper">
+                        <div id="placeholder-message" class="placeholder-text">
+                            <p>Selected task will load here...</p>
+                        </div>
+                        <iframe id="task-frame" style="display: none;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
